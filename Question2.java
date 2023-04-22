@@ -17,6 +17,6 @@ public class Question2
     
     bmi = weight / Math.pow(height,2);
     
-    System.out.println("Your BMI is: " + bmi);
+    System.out.println(bmi);
   }
 }
