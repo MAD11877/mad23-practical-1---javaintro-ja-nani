@@ -33,13 +33,13 @@ public class Question5
     List<Integer> numlist = new ArrayList<Integer>();
     
     Scanner in = new Scanner(System.in);
-    System.out.print("Enter the number of times you will be entering integers: ");
+    //System.out.print("Enter the number of times you will be entering integers: ");
     numtimes = in.nextInt();
     System.out.println();  
         
     for (int i = 0; i < numtimes; i++)
     {        
-      System.out.print("Enter an integer: ");
+      //System.out.print("Enter an integer: ");
       integer = in.nextInt();      
       numlist.add(integer);     
     }
