@@ -16,8 +16,24 @@ public class Question4
      * 
      * Hint: 2 loops are required. System.out.print(...) to print on single line.
      */
-     
-    Scanner in = new Scanner(System.in);
     
+    int integer;
+    int row;
+    
+    Scanner in = new Scanner(System.in);
+    System.out.println("Enter an integer: ");
+    integer = in.nextInt();
+    
+    for (int i = 0; i < integer; i++)
+    {
+      row = integer - i;
+        
+      for (int j = row; j > 0; j--)
+      {
+        System.out.println("*");
+      }
+      
+      System.out.println("\n");
+    }
   }
 }
