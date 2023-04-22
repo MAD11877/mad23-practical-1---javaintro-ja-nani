@@ -13,10 +13,10 @@ public class Question3
     int finalint;
     
     Scanner in = new Scanner(System.in);
-    System.out.println("Enter an integer: ");
+    //System.out.println("Enter an integer: ");
     initialint = in.nextInt();
     
     finalint = initialint * initialint;    
-    System.out.println("The final integer is: " + finalint);
+    System.out.println(finalint);
   }
 }
