@@ -1,54 +1,43 @@
 import java.util.Scanner;
-import java.util.*;
-import java.util.function.Supplier;
+import java.util.Dictionary;
+import java.util.Hashtable;
 
 public class Question5
 {
   public static void main(String[] args)
   {
-    /**
-     * Prompt the user for number. This input indicates the number of integers the user will be entering next. 
-     * Print out the mode (highest occurrence) from the set of integers. 
-     *    e.g.
-     *     > 5
-     *     > 2
-     *     > 4
-     *     > 1
-     *     > 3
-     *     > 4
-     *     4
-     * 
-     *    e.g.
-     *     > 4
-     *     > 2
-     *     > 2
-     *     > 3
-     *     > 3
-     *     2
-     * Hint: Use a loop to get input. Use another 2 loops to find the mode
-     */
-     
-    int integer;
-    int numtimes;
-    List<Integer> numlist = new ArrayList<Integer>();
+    
+    int inputKey;
+    int freqValue;
+    int max = 0;
+    int mode = -1;
     
     Scanner in = new Scanner(System.in);
-    //System.out.print("Enter the number of times you will be entering integers: ");
-    numtimes = in.nextInt();
-    System.out.println();  
-        
-    for (int i = 0; i < numtimes; i++)
-    {        
-      //System.out.print("Enter an integer: ");
-      integer = in.nextInt();      
-      numlist.add(integer);     
-    }
+    int noOfInput = in.nextInt();
+    Dictionary<Integer, Integer> freqDict = new Hashtable<Integer, Integer>();
     
-    System.out.println(); 
-    
-    for (int j : numlist)
+    for (int i = 0; i < noOfInput; i++)
     {
-      System.out.println(j);
+      inputKey = in.nextInt();
+      if(freqDict.get(inputKey) != null)
+      {
+        freqValue = freqDict.get(inputKey);
+        freqDict.put(inputKey, freqValue+1);
+        if (freqValue > max)
+        {
+          max = freqValue;
+          mode = inputKey;
+        }
+      }
+      
+      else
+        freqDict.put(inputKey, 1);
     }
+
+    if (max != 0)
+      System.out.println(mode);
+    else
+      System.out.println("No mode");
+        
   }
 }
